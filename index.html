@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduHub - Modern Education Platform</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">
+        <h1>EduHub</h1>
+      </div>
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="courses.html">Courses </a>
+        <!-- <div class="dropdown">
+          <a href="courses.html" class="dropbtn"
+            >Courses <i class="fas fa-chevron-down"></i
+          ></a>
+          <div class="dropdown-content">
+            <a href="undergraduate.html" class="dropdown-item">
+              <i class="fas fa-graduation-cap"></i>
+              <span>Undergraduate</span>
+            </a>
+            <a href="postgraduate.html" class="dropdown-item">
+              <i class="fas fa-user-graduate"></i>
+              <span>Postgraduate</span>
+            </a>
+            <a href="diploma.html" class="dropdown-item">
+              <i class="fas fa-graduation-cap"></i>
+              <span>Diploma</span>
+            </a>
+          </div>
+        </div> -->
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Hero Section with Swiper -->
+
+      <!-- Hero Section with Swiper -->
+      <section class="hero-swiper">
+        <div class="swiper-container hero-slider">
+          <div class="swiper-wrapper">
+            <div
+              class="swiper-slide"
+              style="background-image: url('/public/banner-1.jpg')"
+            >
+              <div class="slide-content">
+                <h1 data-aos="fade-up">Welcome to EduHub</h1>
+                <p data-aos="fade-up" data-aos-delay="200">
+                  Empowering minds, shaping futures
+                </p>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              style="background-image: url('/public/banner-2.jpg')"
+            >
+              <div class="slide-content">
+                <h1 data-aos="fade-up">Learn From The Best</h1>
+                <p data-aos="fade-up" data-aos-delay="200">
+                  Expert faculty and modern facilities
+                </p>
+              </div>
+            </div>
+            <div
+              class="swiper-slide"
+              style="background-image: url('/public/banner-3.jpg')"
+            >
+              <div class="slide-content">
+                <h1 data-aos="fade-up">Your Future Starts Here</h1>
+                <p data-aos="fade-up" data-aos-delay="200">
+                  Discover your potential
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </section>
+
+      <!-- Course Filter Section -->
+      <section class="hero-filter">
+        <div class="hero-filter-container">
+          <div class="filter-group">
+            <label for="program">Select Program:</label>
+            <select id="program" onchange="updateCourseOptions()">
+              <option value="">All Programs</option>
+              <option value="Undergraduate">Undergraduate</option>
+              <option value="Postgraduate">Postgraduate</option>
+              <option value="Top_Up">Top Up</option>
+              <option value="Diploma">Diploma</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="course">Select Course:</label>
+            <select id="course">
+              <option value="">Select a Course</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <button class="apply-button" onclick="redirectToCourse()">
+              View
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Courses Section -->
+      <section class="featured-courses" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Featured Courses</h2>
+          <div class="section-underline"></div>
+        </div>
+        <div class="courses-grid">
+          <div class="course-card" data-aos="fade-up">
+            <div
+              class="course-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97');
+              "
+            ></div>
+            <div class="course-content">
+              <h3>BSc Computer Science</h3>
+              <p>
+                A comprehensive program covering programming, algorithms, and
+                software development.
+              </p>
+              <a
+                href="course-details.html?course=BSc Computer Science"
+                class="course-link"
+                >Learn More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="course-card" data-aos="fade-up" data-aos-delay="100">
+            <div
+              class="course-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40');
+              "
+            ></div>
+            <div class="course-content">
+              <h3>MSc Data Science</h3>
+              <p>
+                Advanced study in data analytics, machine learning, and
+                statistical analysis.
+              </p>
+              <a
+                href="course-details.html?course=MSc Data Science"
+                class="course-link"
+                >Learn More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="course-card" data-aos="fade-up" data-aos-delay="200">
+            <div
+              class="course-image"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1');
+              "
+            ></div>
+            <div class="course-content">
+              <h3>BBA Business Administration</h3>
+              <p>
+                Learn business principles, management, and organizational
+                leadership.
+              </p>
+              <a
+                href="course-details.html?course=BBA Business Administration"
+                class="course-link"
+                >Learn More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Statistics Counter Section -->
+      <section class="stats-section">
+        <div class="stats-container">
+          <div class="stat-item" data-aos="fade-up">
+            <i class="fas fa-user-graduate"></i>
+            <h3 class="counter" data-target="15000">0</h3>
+            <p>Students Enrolled</p>
+          </div>
+          <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <h3 class="counter" data-target="500">0</h3>
+            <p>Expert Faculty</p>
+          </div>
+          <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-book"></i>
+            <h3 class="counter" data-target="100">0</h3>
+            <p>Courses Offered</p>
+          </div>
+          <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+            <i class="fas fa-award"></i>
+            <h3 class="counter" data-target="95">0</h3>
+            <p>Success Rate</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Student Testimonials Section -->
+      <section class="testimonials">
+        <div class="section-header">
+          <h2>What Our Students Say</h2>
+          <div class="section-underline"></div>
+        </div>
+        <div class="swiper-container testimonial-slider">
+          <div class="swiper-wrapper">
+            <div class="testimonial-swiper-slide">
+              <div class="testimonial-card" data-aos="fade-up">
+                <div class="testimonial-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330"
+                    alt="Student 1"
+                  />
+                </div>
+                <h3>Sarah Johnson</h3>
+                <p class="course">BSc Computer Science</p>
+                <p class="quote">
+                  "The quality of education and support from faculty has been
+                  exceptional. I've gained practical skills that are highly
+                  valued in the industry."
+                </p>
+              </div>
+            </div>
+            <div class="testimonial-swiper-slide">
+              <div
+                class="testimonial-card"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <div class="testimonial-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
+                    alt="Student 2"
+                  />
+                </div>
+                <h3>Michael Chen</h3>
+                <p class="course">MSc Data Science</p>
+                <p class="quote">
+                  "The hands-on projects and industry connections have helped me
+                  secure my dream job even before graduation."
+                </p>
+              </div>
+            </div>
+            <div class="testimonial-swiper-slide">
+              <div
+                class="testimonial-card"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <div class="testimonial-image">
+                  <img
+                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80"
+                    alt="Student 3"
+                  />
+                </div>
+                <h3>Emily Davis</h3>
+                <p class="course">BBA Business Administration</p>
+                <p class="quote">
+                  "The diverse learning environment and experienced professors
+                  have given me a global perspective on business."
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </section>
+
+      <!-- Enhanced Footer -->
+      <footer class="modern-footer">
+        <div class="footer-content">
+          <div class="footer-section about">
+            <h3>About EduHub</h3>
+            <p>
+              Empowering students through quality education since 1990. Join us
+              in shaping the future of education.
+            </p>
+            <div class="social-links">
+              <a href="#" class="social-icon"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-section links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="courses.html">Courses</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="footer-section contact">
+            <h3>Contact Us</h3>
+            <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+            <p><i class="fas fa-envelope"></i> info@eduhub.com</p>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> 123 Education St, Learning
+              City
+            </p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 EduHub. All rights reserved.</p>
+        </div>
+      </footer>
+    </main>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
